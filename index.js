@@ -57,6 +57,4 @@ app.get('/', (req, res) => {
     res.send('Welcome To ema-john-app');
 })
 
-app.listen(PORT, () => {
-    console.log('Server is running at: ', PORT);
-});
+app.listen(PORT);
