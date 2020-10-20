@@ -22,8 +22,9 @@ client.connect(err => {
                 res.send(result.insertedCount);
         })
     });
-    app.get('/products',(req,res)=>{
-        productCollection.find({})
+    app.get('/products', (req, res) => {
+        const search = req.query.search;
+        productCollection.find({name: {$regex:search}})
         .toArray((err,documents)=>{
             res.send(documents);
         })
